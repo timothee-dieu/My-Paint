@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>My Paint</title>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/layers.css">
+		<link rel="stylesheet" href="css/settings.css">
+		<link rel="stylesheet" href="css/tools.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	</head>
+	<body>
+		<div id='layers' class='layers-hide'>
+			<button id='layers-new'><span class='fa fa-plus'> </span><br>Nouveau</button>
+			<div id='layers-container'>
+				<div class='layers-slot'><button class='layers-delete'><span class='fa fa-times'></span></button><button class='layers-mask'><span class='fa fa-minus'></span></button><canvas></canvas></div>
+				<div class='layers-slot'><button class='layers-delete'><span class='fa fa-times'></span></button><button class='layers-mask'><span class='fa fa-minus'></span></button><canvas></canvas></div>
+				<div class='layers-slot'><button class='layers-delete'><span class='fa fa-times'></span></button><button class='layers-mask'><span class='fa fa-minus'></span></button><canvas></canvas></div>
+				<div class='layers-slot'><button class='layers-delete'><span class='fa fa-times'></span></button><button class='layers-mask'><span class='fa fa-minus'></span></button><canvas></canvas></div>
+				<div class='layers-slot'><button class='layers-delete'><span class='fa fa-times'></span></button><button class='layers-mask'><span class='fa fa-minus'></span></button><canvas></canvas></div>
+				<div class='layers-slot'><button class='layers-delete'><span class='fa fa-times'></span></button><button class='layers-mask'><span class='fa fa-minus'></span></button><canvas></canvas></div>
+				<div class='layers-slot'><button class='layers-delete'><span class='fa fa-times'></span></button><button class='layers-mask'><span class='fa fa-minus'></span></button><canvas></canvas></div>
+				<div class='layers-slot'><button class='layers-delete'><span class='fa fa-times'></span></button><button class='layers-mask'><span class='fa fa-minus'></span></button><canvas></canvas></div>
+				<div id='layers-selector'></div>
+				<div id='layers-move'></div>
+			</div>
+			<p id='layers-p'>Afficher les calques</p>
+		</div>
+		<div id='settings' class='settings-hide'>
+			<button id='btn-settings'>
+				<span class="fa fa-chevron-right" aria-hidden="true"></span>
+			</button>
+			<ul>
+				<li>
+					<span id='settings-icon' class="fa fa-cog" aria-hidden="true"></span>
+					<h2>Paramètres</h2>
+				</li>
+				<li>
+					<input type="file" id='file-input'>
+					<p id='settings-open' class='settings-action'>Ouvrir...</p>
+					<p class='settings-action'><a id='settings-save' download='dessin.png'>Enregistrer sous...</a></p>
+					<p id='settings-sym' class='settings-action'>Symétrie: <br><span>Aucune</span></p>
+				</li>
+				<li>
+					<h3>
+					<label for="size">Taille</label>
+					</h3>
+					<div id='size-container'>
+						<button id='size-less'><span class="fa fa-minus" aria-hidden="true"></span>
+						</button>
+						<input type="number" id='size' value='5' min='1' max='72'>
+						<button id='size-plus'><span class="fa fa-plus" aria-hidden="true"></span>
+						</button>
+					</div>
+				</li>
+				<li>
+					<h3>Couleur</h3>
+					<table>
+					<tr>
+						<td><button class='settings-color' value='#330000'></button></td>
+						<td><button class='settings-color' value='#331900'></button></td>
+						<td><button class='settings-color' value='#333300'></button></td>
+						<td><button class='settings-color' value='#193300'></button></td>
+						<td><button class='settings-color' value='#003300'></button></td>
+						<td><button class='settings-color' value='#003319'></button></td>
+						<td><button class='settings-color' value='#003333'></button></td>
+						<td><button class='settings-color' value='#001933'></button></td>
+						<td><button class='settings-color' value='#000033'></button></td>
+						<td><button class='settings-color' value='#190033'></button></td>
+						<td><button class='settings-color' value='#330033'></button></td>
+						<td><button class='settings-color' value='#330019'></button></td>
+						<td><button class='settings-color' value='#000000'></button></td>
+					</tr>
+					<tr>
+						<td><button class='settings-color' value='#660000'></button></td>
+						<td><button class='settings-color' value='#663300'></button></td>
+						<td><button class='settings-color' value='#666600'></button></td>
+						<td><button class='settings-color' value='#336600'></button></td>
+						<td><button class='settings-color' value='#006600'></button></td>
+						<td><button class='settings-color' value='#006633'></button></td>
+						<td><button class='settings-color' value='#006666'></button></td>
+						<td><button class='settings-color' value='#003366'></button></td>
+						<td><button class='settings-color' value='#000066'></button></td>
+						<td><button class='settings-color' value='#330066'></button></td>
+						<td><button class='settings-color' value='#660066'></button></td>
+						<td><button class='settings-color' value='#660033'></button></td>
+						<td><button class='settings-color' value='#202020'></button></td>
+					</tr>
+					<tr>
+						<td><button class='settings-color' value='#990000'></button></td>
+						<td><button class='settings-color' value='#994C00'></button></td>
+						<td><button class='settings-color' value='#999900'></button></td>
+						<td><button class='settings-color' value='#4C9900'></button></td>
+						<td><button class='settings-color' value='#009900'></button></td>
+						<td><button class='settings-color' value='#00994C'></button></td>
+						<td><button class='settings-color' value='#009999'></button></td>
+						<td><button class='settings-color' value='#004C99'></button></td>
+						<td><button class='settings-color' value='#000099'></button></td>
+						<td><button class='settings-color' value='#4C0099'></button></td>
+						<td><button class='settings-color' value='#990099'></button></td>
+						<td><button class='settings-color' value='#99004C'></button></td>
+						<td><button class='settings-color' value='#404040'></button></td>
+					</tr>
+					<tr>
+						<td><button class='settings-color' value='#CC0000'></button></td>
+						<td><button class='settings-color' value='#CC6600'></button></td>
+						<td><button class='settings-color' value='#CCCC00'></button></td>
+						<td><button class='settings-color' value='#66CC00'></button></td>
+						<td><button class='settings-color' value='#00CC00'></button></td>
+						<td><button class='settings-color' value='#00CC66'></button></td>
+						<td><button class='settings-color' value='#00CCCC'></button></td>
+						<td><button class='settings-color' value='#0066CC'></button></td>
+						<td><button class='settings-color' value='#0000CC'></button></td>
+						<td><button class='settings-color' value='#6600CC'></button></td>
+						<td><button class='settings-color' value='#CC00CC'></button></td>
+						<td><button class='settings-color' value='#CC0066'></button></td>
+						<td><button class='settings-color' value='#606060'></button></td>
+					</tr>
+					<tr>
+						<td><button class='settings-color' value='#FF0000'></button></td>
+						<td><button class='settings-color' value='#FF8000'></button></td>
+						<td><button class='settings-color' value='#FFFF00'></button></td>
+						<td><button class='settings-color' value='#80FF00'></button></td>
+						<td><button class='settings-color' value='#00FF00'></button></td>
+						<td><button class='settings-color' value='#00FF80'></button></td>
+						<td><button class='settings-color' value='#00FFFF'></button></td>
+						<td><button class='settings-color' value='#0080FF'></button></td>
+						<td><button class='settings-color' value='#0000FF'></button></td>
+						<td><button class='settings-color' value='#7F00FF'></button></td>
+						<td><button class='settings-color' value='#FF00FF'></button></td>
+						<td><button class='settings-color' value='#FF007F'></button></td>
+						<td><button class='settings-color' value='#808080'></button></td>
+					</tr>
+					<tr>
+						<td><button class='settings-color' value='#FF3333'></button></td>
+						<td><button class='settings-color' value='#FF9933'></button></td>
+						<td><button class='settings-color' value='#FFFF33'></button></td>
+						<td><button class='settings-color' value='#99FF33'></button></td>
+						<td><button class='settings-color' value='#33FF33'></button></td>
+						<td><button class='settings-color' value='#33FF99'></button></td>
+						<td><button class='settings-color' value='#33FFFF'></button></td>
+						<td><button class='settings-color' value='#3399FF'></button></td>
+						<td><button class='settings-color' value='#3333FF'></button></td>
+						<td><button class='settings-color' value='#9933FF'></button></td>
+						<td><button class='settings-color' value='#FF33FF'></button></td>
+						<td><button class='settings-color' value='#FF3399'></button></td>
+						<td><button class='settings-color' value='#A0A0A0'></button></td>
+					</tr>
+					<tr>
+						<td><button class='settings-color' value='#FF6666'></button></td>
+						<td><button class='settings-color' value='#FFB266'></button></td>
+						<td><button class='settings-color' value='#FFFF66'></button></td>
+						<td><button class='settings-color' value='#B2FF66'></button></td>
+						<td><button class='settings-color' value='#66FF66'></button></td>
+						<td><button class='settings-color' value='#66FFB2'></button></td>
+						<td><button class='settings-color' value='#66FFFF'></button></td>
+						<td><button class='settings-color' value='#66B2FF'></button></td>
+						<td><button class='settings-color' value='#6666FF'></button></td>
+						<td><button class='settings-color' value='#B266FF'></button></td>
+						<td><button class='settings-color' value='#FF66FF'></button></td>
+						<td><button class='settings-color' value='#FF66B2'></button></td>
+						<td><button class='settings-color' value='#C0C0C0'></button></td>
+					</tr>
+					<tr>
+						<td><button class='settings-color' value='#FF9999'></button></td>
+						<td><button class='settings-color' value='#FFCC99'></button></td>
+						<td><button class='settings-color' value='#FFFF99'></button></td>
+						<td><button class='settings-color' value='#CCFF99'></button></td>
+						<td><button class='settings-color' value='#99FF99'></button></td>
+						<td><button class='settings-color' value='#99FFCC'></button></td>
+						<td><button class='settings-color' value='#99FFFF'></button></td>
+						<td><button class='settings-color' value='#99CCFF'></button></td>
+						<td><button class='settings-color' value='#9999FF'></button></td>
+						<td><button class='settings-color' value='#CC99FF'></button></td>
+						<td><button class='settings-color' value='#FF99FF'></button></td>
+						<td><button class='settings-color' value='#FF99CC'></button></td>
+						<td><button class='settings-color' value='#E0E0E0'></button></td>
+					</tr>
+					<tr>
+						<td><button class='settings-color' value='#FFCCCC'></button></td>
+						<td><button class='settings-color' value='#FFE5CC'></button></td>
+						<td><button class='settings-color' value='#FFFFCC'></button></td>
+						<td><button class='settings-color' value='#E5FFCC'></button></td>
+						<td><button class='settings-color' value='#CCFFCC'></button></td>
+						<td><button class='settings-color' value='#CCFFE5'></button></td>
+						<td><button class='settings-color' value='#CCFFFF'></button></td>
+						<td><button class='settings-color' value='#CCE5FF'></button></td>
+						<td><button class='settings-color' value='#CCCCFF'></button></td>
+						<td><button class='settings-color' value='#E5CCFF'></button></td>
+						<td><button class='settings-color' value='#FFCCFF'></button></td>
+						<td><button class='settings-color' value='#FFCCE5'></button></td>
+						<td><button class='settings-color' value='#FFFFFF'></button></td>
+					</tr>
+					</table>
+				  	<input type="color" id='color-picker'>
+				  	<input type="text" id='color-input' placeholder='Code Hexadécimal...'>
+					<p id='more-colors' class='settings-action'>Plus de couleurs...</p>
+				</li>
+			</ul>
+		</div>
+		<div id='tools' class='animated fadeInRight'>
+			<ul>
+				<li><button id='pencil'>
+					<span class="fa fa-pencil" aria-hidden="true"></span>
+				</button></li>
+				<li><button id='eraser'>
+					<span class="fa fa-eraser" aria-hidden="true"></span>
+				</button></li>
+				<li><button id='line'>
+					<span class="fa fa-minus" aria-hidden="true"></span>
+				</button></li>
+				<li><button id='square'>
+					<span class="fa fa-square-o" aria-hidden="true"></span>
+				</button></li>
+				<li><button id='circle'>
+					<span class="fa fa-circle-o" aria-hidden="true"></span>
+				</button></li>
+				<li><button id='square-filled'>
+					<span class="fa fa-square" aria-hidden="true"></span>
+				</button></li>
+				<li><button id='circle-filled'>
+					<span class="fa fa-circle" aria-hidden="true"></span>
+				</button></li>
+			</ul>
+		</div>
+		<div id="mypaint-container" class=''>
+			<canvas id="sym"></canvas>
+			<canvas id="main" class='layers'></canvas>
+			<div id='mouse'></div>
+		</div>
+		<div id='separator-h'></div>
+		<div id='separator-v'></div>
+		<script src='js/jquery.js'></script>
+		<script src='js/bootstrap.min.js'></script>
+		<script src='js/my_paint.js'></script>
+
+	</body>
+</html>

@@ -1,0 +1,106 @@
+* {
+	font-family: Raleway;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;   
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #D3D3D3!important;
+	display: -webkit-flexbox;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	justify-content: center;
+
+}
+
+#mypaint-container {
+	border: 0px solid gray;
+	height: 80%;
+	width: 80%;
+	position: relative;
+	background-color: white;
+}
+
+
+#mypaint-container canvas, #mouse
+{
+	position: absolute;
+	left: 0px; right: 0;
+	bottom: 0; top: 0;
+	cursor: crosshair;
+}
+
+
+#separator
+{
+	display: none;
+	position: absolute;
+	
+	height: 2px;
+	width: 2px;
+	border-bottom: 2000px solid black;
+
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+	box-sizing: border-box;
+
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#separator-h
+{
+	display: none;
+	position: absolute;
+	border: 2.5px solid black;
+
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+
+	width: 100%;
+	height: 0px;
+
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+#separator-v
+{
+	display: none;
+	position: absolute;
+	border: 2.5px solid black;
+
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+
+	width: 0px;
+	height: 100%;
+
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}

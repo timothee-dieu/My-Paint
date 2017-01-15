@@ -1,0 +1,283 @@
+#settings
+{
+	z-index: 9999;
+	box-sizing: border-box;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 300px;
+	height: 100%;
+	background-color: black;
+	padding: 50px;
+	padding-top: 35px;
+	padding-bottom: 0px;
+	padding-right: 55px;
+
+	-webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    overflow: hidden;
+}
+
+#settings ul
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	color: white;
+}
+
+#settings li
+{
+	margin-bottom: 25px;
+}
+
+#settings li:nth-child(1)
+{
+	text-align: center;
+}
+
+#settings h2
+{
+	font-size: 30px;
+}
+
+#settings h3
+{
+	font-size: 20px;
+}
+
+#settings button
+{
+	color: white;
+	border: none;
+	
+}
+
+#settings button:focus
+{
+	outline: none;
+}
+
+#btn-settings
+{
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	right: 0px;
+	top: 45%;
+	font-size: 30px;
+	background-color: black;
+
+	border-radius: 30px;
+
+	-webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+}
+
+.settings-hide
+{
+	left: -245px!important;
+}
+
+.settings-rotate
+{
+	transform: rotate(180deg);
+}
+
+#size
+{
+	float: left;
+	display: inline-block;
+	height: 40px;
+	width: 65px;
+	color: black;
+	text-align: center;
+}
+
+#size-plus, #size-less
+{
+	float: left;
+	background-color: #5bc0de;
+	height: 40px;
+	width: 65px;
+	border-radius: 5px;
+}
+
+
+#size-plus
+{
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+#size-less
+{
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+input[type=number]
+{
+	-moz-appearance: textfield;
+}
+
+#size-container
+{
+	display: inline-block;
+	-webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
+}
+
+.settings-action
+{
+	font-size: 20px;
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.settings-action:hover
+{
+	font-size: 20px;
+	transform: translateX(5px);
+	color: #5bc0de;
+}
+
+#file-input
+{
+	position: absolute;
+	top: -5px;
+	width: 0.1px;
+	height: 0.1px;
+}
+
+#color-picker
+{
+	position: absolute;
+	top: -5px;
+	width: 0.1px;
+	height: 0.1px;
+}
+
+#settings-icon
+{
+	font-size: 60px;
+	color: #5bc0de;
+}
+
+#settings a 
+{
+	text-decoration: none;
+	color: inherit;
+}
+
+#settings table
+{
+	display: block;
+	width: 195px;
+}
+
+#settings tr
+{
+	display: block;
+	line-height: 0em;
+	height: 15px;
+	width: 195px;
+	font-size: 0;
+}
+#settings td
+{
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+}
+
+.settings-color
+{
+	border-radius: 0px;
+	height: 15px;
+	width: 15px;
+
+	float: left;
+
+	margin: 0px;
+
+	padding: 0;
+
+	-webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+
+    /* border: solid gray 2px !important; */
+}
+
+.settings-color[value='#000000']
+{
+    border: solid gray 2px !important;
+}
+
+.settings-color:hover
+{
+	transform: scale(2, 2);
+	box-shadow: 0px 0px 0px 5px black;
+}
+
+.settings-giggle
+{
+	animation-name: giggle;
+	animation-duration: 0.2s;
+	animation-fill-mode: forwards;
+}
+
+#color-input
+{
+	margin-top: 0px;
+	display: block;
+	height: 40px;
+	width: 195px;
+	color: black;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+#color-input:focus
+{
+	outline: none;
+}
+
+#more-colors
+{
+	margin-top: 20px;
+}
+
+#settings-sym span
+{
+	display: inline-block;
+}
+
+@keyframes giggle {
+    0% {transform: scale(1.0, 1.0)}
+    50% {transform: scale(1.1, 1.1)}
+    100% {transform: scale(1.0, 1.0)}
+}
